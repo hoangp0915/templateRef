@@ -1,5 +1,7 @@
 # Template
 
+# https://blog.jonrshar.pe/2017/May/29/angular-ng-template-outlet.html
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
