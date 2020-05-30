@@ -1,6 +1,10 @@
 <div class="form-group">
-  <ng-container *ngTemplateOutlet="text "> </ng-container>
-  <ng-container *ngTemplateOutlet="input; context: isObject ? value : valueObject"></ng-container>
+  <!-- <ng-container *ngTemplateOutlet="text "> </ng-container> -->
+  <ng-container
+    *ngTemplateOutlet="parentTemplate; context: isObject ? value : valueObject"
+  >
+  </ng-container>
+  <!-- <ng-container *ngTemplateOutlet="input; context: isObject ? value : valueObject"></ng-container> -->
   <small id="emailHelp" class="form-text text-muted"
     >We'll never share your email with anyone else.</small
   >

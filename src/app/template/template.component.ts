@@ -8,9 +8,10 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent implements OnInit, OnChanges {
-  @ContentChild('input', {static: true}) input: TemplateRef<any>;
-  @ContentChild('text', {static: true}) text: TemplateRef<any>;
-  @Input() parentForm: FormGroup;
+  // @ContentChild('input', {static: true}) input: TemplateRef<any>;
+  // @ContentChild('text', {static: true}) text: TemplateRef<any>;
+  // @Input() parentForm: FormGroup;
+  @ContentChild(TemplateRef) parentTemplate;
   @Input() value: any;
   public valueObject = {};
   public isObject = false;
