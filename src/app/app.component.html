@@ -1,16 +1,5 @@
-  <app-template [(value)]="ctx">
-    <div *appTemplateRef="let value">
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        [(ngModel)]="title"
-      />
-      {{title}}
-    </div>
-    <!-- <ng-template let-value="estimate">
+<!-- <app-template> -->
+<!-- <ng-template let-value="estimate">
       <input
         type="email"
         class="form-control"
@@ -20,7 +9,7 @@
         [value]="value"
       />
     </ng-template> -->
-    <!-- <ng-template #input let-value="estimate">
+<!-- <ng-template #input let-value="estimate">
       <input
         type="email"
         class="form-control"
@@ -30,8 +19,23 @@
         [value]="value"
       />
     </ng-template> -->
-    <!-- <ng-template #text>
+<!-- <ng-template #text>
       <label for="exampleInputEmail1">Email address</label>
     </ng-template> -->
-  </app-template>
-<pre>{{ctx | json}}</pre>
+<!-- </app-template> -->
+<app-template
+  ><div *suggestion>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter email"
+      [(ngModel)]="ctx.estimate"
+    />
+  </div>
+  <ng-template #text>
+    <label for="exampleInputEmail1">Email address</label>
+  </ng-template></app-template
+>
+<pre>{{ ctx | json }}</pre>

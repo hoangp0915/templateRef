@@ -1,5 +1,4 @@
 import { Component, OnInit, ContentChild, ElementRef, TemplateRef, Input, OnChanges } from '@angular/core';
-import { TemplateRefDirective } from '../directives/template-ref.directive';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,13 +7,15 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent implements OnInit, OnChanges {
-  // @ContentChild('input', {static: true}) input: TemplateRef<any>;
-  // @ContentChild('text', {static: true}) text: TemplateRef<any>;
+  @ContentChild('input', {static: true}) input: TemplateRef<any>;
+  @ContentChild('text', {static: true}) text: TemplateRef<any>;
   // @Input() parentForm: FormGroup;
   @ContentChild(TemplateRef) parentTemplate;
   @Input() value: any;
+
   public valueObject = {};
   public isObject = false;
+  
   constructor() { }
   ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
     console.log("TemplateComponent -> ngOnChanges -> changes", changes)
@@ -26,11 +27,12 @@ export class TemplateComponent implements OnInit, OnChanges {
         this.isObject = true
       }
     }
-    console.log(typeof(changes.value.currentValue));
+    
+    
   }
   
   ngOnInit(): void {
-    
+    console.log(this.parentTemplate);
   }
 
 

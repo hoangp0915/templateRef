@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Directive } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+
+@Directive({
+  selector: '[suggestion]',
+})
+export class SuggestionDirective { }
 
 @Component({
   selector: 'app-root',
@@ -17,3 +22,4 @@ export class AppComponent {
     })
   }
 }
+
